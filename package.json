@@ -10,7 +10,9 @@
     "url": "https://github.com/ehgoodenough"
   },
   "dependencies": {
+    "expect.js": "^0.3.1",
     "microajax": "^1.0.3",
+    "moment": "^2.14.1",
     "raf": "^3.2.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
