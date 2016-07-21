@@ -1,4 +1,4 @@
-.frame {
+/*.frame {
     top: 0px;
     left: 0px;
     right: 0px;
@@ -8,7 +8,10 @@
     width: 100%;
     max-width: 320px;
     position: absolute;
+}*/
 
+.frame {
     color: #111;
+    padding: 2em;
     background-color: #EEE;
 }

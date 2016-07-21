@@ -7,8 +7,9 @@ export default class Mount extends React.Component {
     render() {
         if(!!this.state) {
             return (
-                <Frame>
+                <Frame frame={this.state.frame}>
                     <Countdown countdown={this.state.countdown}/>
+                    <div>Hello World!</div>
                 </Frame>
             )
         } else {
