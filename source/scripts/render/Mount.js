@@ -1,16 +1,7 @@
 import React from "react"
 
+import Frame from "scripts/render/Frame.js"
 import Countdown from "scripts/render/Countdown.js"
-
-class Frame extends React.Component {
-    render() {
-        return (
-            <div className="frame">
-                {this.props.children}
-            </div>
-        )
-    }
-}
 
 export default class Mount extends React.Component {
     render() {

@@ -1,11 +1,12 @@
 @import "styles/fonts.css";
+@import "styles/frame.css";
 @import "styles/countdown.css";
 
 * {
     margin: 0;
     padding: 0;
     cursor: default;
-    /*user-select: none;*/
+    user-select: none;
     box-sizing: border-box;
     image-rendering: pixelated;
 }
@@ -14,20 +15,4 @@ html {
     color: #EEE;
     background-color: #111;
     font-family: open-sans;
-}
-
-.frame {
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100%;
-    margin: auto;
-    max-width: 320px;
-    position: absolute;
-
-    color: #111;
-    background-color: #EEE;
-
-    padding: 2em;
 }

@@ -1,0 +1,14 @@
+.frame {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 2em;
+    margin: auto;
+    width: 100%;
+    max-width: 320px;
+    position: absolute;
+
+    color: #111;
+    background-color: #EEE;
+}
