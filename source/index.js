@@ -13,11 +13,35 @@ var render = ReactDOM.render(<Mount/>, document.getElementById("mount"))
 // Model //
 //////////
 
-import Countdown from "scripts/model/Countdown.js"
+class Game {
+    constructor() {
+        this.tiles = {
+            "0x0": {
+                position: {x: 0, y: 0},
+                color: "#C00"
+            },
+            "0x1": {
+                position: {x: 0, y: 1},
+                color: "#C00"
+            },
+        }
+        this.camera = {
+            position: {x: 0, y: 0}
+        }
+    }
+}
+
+class Frame {
+    constructor() {
+        this.width = 360
+        this.height = 480
+        this.color = "#222"
+    }
+}
 
 var state = new Object({
-    frame: {width: 360, height: 360},
-    countdown: new Countdown(11 * 60 * 1000)
+    frame: new Frame(),
+    game: new Game(),
 })
 
 import Loop from "scripts/Loop.js"

@@ -1,15 +1,20 @@
 import React from "react"
 
 import Frame from "scripts/render/Frame.js"
-import Countdown from "scripts/render/Countdown.js"
+import Camera from "scripts/render/Camera.js"
+import Tile from "scripts/render/Tile.js"
 
 export default class Mount extends React.Component {
     render() {
         if(!!this.state) {
             return (
                 <Frame frame={this.state.frame}>
-                    <Countdown countdown={this.state.countdown}/>
-                    <div>Hello World!</div>
+                    <Camera camera={this.state.game.camera}>
+                        {Object.keys(this.state.game.tiles).map((key) => {
+                            var tile = this.state.game.tiles[key]
+                            return <Tile tile={tile} key={key}/>
+                        })}
+                    </Camera>
                 </Frame>
             )
         } else {
