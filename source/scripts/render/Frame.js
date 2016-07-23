@@ -1,6 +1,6 @@
 import React from "react"
 
-import DATA from "scripts/DATA.js"
+import DATA from "scripts/data/DATA.js"
 
 export default class Frame extends React.Component {
     render() {

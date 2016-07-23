@@ -19,9 +19,15 @@ var state = new Object({
     game: new Game(),
 })
 
+if(STAGE == "DEVELOPMENT") {
+    window.game = state.game
+    window.state = state
+}
+
 import Loop from "scripts/Loop.js"
 
 Loop(function(delta) {
+    state.game.update(delta)
     render.setState(state)
 })
 

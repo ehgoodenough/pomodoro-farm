@@ -1,3 +1,5 @@
+import ITEMS from "scripts/data/ITEMS.js"
+
 export default {
     TILE: {
         WIDTH: 48,

@@ -1,6 +1,6 @@
 import React from "react"
 
-import DATA from "scripts/DATA.js"
+import DATA from "scripts/data/DATA.js"
 
 export default class Camera extends React.Component {
     render() {
