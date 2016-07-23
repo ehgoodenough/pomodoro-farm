@@ -1,5 +1,7 @@
 import React from "react"
 
+import DATA from "scripts/DATA.js"
+
 export default class Camera extends React.Component {
     render() {
         return (
@@ -11,8 +13,8 @@ export default class Camera extends React.Component {
     get style() {
         return {
             position: "absolute",
-            top: this.props.camera.position.y + (480 / 2) - (32 / 2) + "px",
-            left: this.props.camera.position.x + (360 / 2) - (32 / 2) + "px",
+            left: this.props.camera.position.x + (DATA.FRAME.WIDTH / 2) - (DATA.TILE.WIDTH / 2) + "px",
+            top: this.props.camera.position.y + (DATA.FRAME.HEIGHT / 2) - (DATA.TILE.HEIGHT / 2) + "px",
         }
     }
 }

@@ -1,5 +1,7 @@
 import React from "react"
 
+import DATA from "scripts/DATA.js"
+
 export default class Frame extends React.Component {
     render() {
         return (
@@ -17,17 +19,17 @@ export default class Frame extends React.Component {
             margin: "auto",
             position: "fixed",
             overflow: "hidden",
-            width: this.props.frame.width + "px",
-            height: this.props.frame.height + "px",
-            backgroundColor: this.props.frame.color,
+            width: DATA.FRAME.WIDTH + "px",
+            height: DATA.FRAME.HEIGHT + "px",
+            backgroundColor: DATA.FRAME.COLOR,
             transform: "scale(" + this.scale + ")",
             transformOrigin: "center",
         }
     }
     get scale() {
         return Math.min(
-            window.innerWidth / this.props.frame.width,
-            window.innerHeight / this.props.frame.height
+            window.innerWidth / DATA.FRAME.WIDTH,
+            window.innerHeight / DATA.FRAME.HEIGHT
         )
     }
 }

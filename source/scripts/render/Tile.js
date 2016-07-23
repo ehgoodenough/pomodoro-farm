@@ -1,7 +1,6 @@
 import React from "react"
 
-const TILE_WIDTH = 32
-const TILE_HEIGHT = 32
+import DATA from "scripts/DATA.js"
 
 export default class Tile extends React.Component {
     render() {
@@ -12,10 +11,10 @@ export default class Tile extends React.Component {
     get style() {
         return {
             position: "absolute",
-            width: TILE_WIDTH + "px",
-            height: TILE_HEIGHT + "px",
-            left: this.props.tile.position.x * TILE_WIDTH + "px",
-            top: this.props.tile.position.y * TILE_HEIGHT + "px",
+            width: DATA.TILE.WIDTH + "px",
+            height: DATA.TILE.HEIGHT + "px",
+            left: this.props.tile.position.x * DATA.TILE.WIDTH + "px",
+            top: this.props.tile.position.y * DATA.TILE.HEIGHT + "px",
             backgroundColor: this.props.tile.color,
         }
     }

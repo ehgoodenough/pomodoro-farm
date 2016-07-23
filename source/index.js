@@ -13,34 +13,9 @@ var render = ReactDOM.render(<Mount/>, document.getElementById("mount"))
 // Model //
 //////////
 
-class Game {
-    constructor() {
-        this.tiles = {
-            "0x0": {
-                position: {x: 0, y: 0},
-                color: "#C00"
-            },
-            "0x1": {
-                position: {x: 0, y: 1},
-                color: "#C00"
-            },
-        }
-        this.camera = {
-            position: {x: 0, y: 0}
-        }
-    }
-}
-
-class Frame {
-    constructor() {
-        this.width = 360
-        this.height = 480
-        this.color = "#222"
-    }
-}
+import Game from "scripts/model/Game.js"
 
 var state = new Object({
-    frame: new Frame(),
     game: new Game(),
 })
 
