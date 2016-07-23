@@ -10,8 +10,7 @@ export default class Mount extends React.Component {
             return (
                 <Frame frame={this.state.frame}>
                     <Camera camera={this.state.game.camera}>
-                        {Object.keys(this.state.game.tiles).map((key) => {
-                            var tile = this.state.game.tiles[key]
+                        {this.state.game.tiles.map((tile, key) => {
                             return <Tile tile={tile} key={key}/>
                         })}
                     </Camera>
