@@ -1,4 +1,5 @@
 import ITEMS from "scripts/data/ITEMS.js"
+import Input from "scripts/Input.js"
 
 export default class Player {
     constructor() {
@@ -9,5 +10,8 @@ export default class Player {
     }
     get item() {
         return this.inventory[this.inventorySelection]
+    }
+    update(delta) {
+        // ...
     }
 }

@@ -21,6 +21,6 @@ export default class Game {
         }
     }
     update(delta) {
-        // ...
+        this.player.update(delta)
     }
 }
