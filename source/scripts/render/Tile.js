@@ -15,7 +15,10 @@ export default class Tile extends React.Component {
             height: DATA.TILE.HEIGHT + "px",
             left: this.props.tile.position.x * DATA.TILE.WIDTH + "px",
             top: this.props.tile.position.y * DATA.TILE.HEIGHT + "px",
-            backgroundColor: this.props.tile.color,
+            backgroundImage: "url(" + this.props.tile.image + ")",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "100%",
         }
     }
     onClick() {

@@ -81,6 +81,10 @@ rimraf("./builds/web", function() {
                     test: /\.(ttf|woff|eot)$/i,
                     loader: "url-loader",
                 },
+                {
+                    test: /\.(png|gif)$/i,
+                    loader: "url-loader",
+                },
             ],
         },
         postcss: function() {

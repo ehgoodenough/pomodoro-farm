@@ -1,3 +1,5 @@
+import DATA from "scripts/data/DATA.js"
+
 export default class Tile {
     constructor(tile) {
         this.position = tile.position || {x: 0, y: 0}
@@ -6,16 +8,12 @@ export default class Tile {
     get key() {
         return this.position.x + "x" + this.position.y
     }
-    get color() {
+    get image() {
         if(this.isHoed) {
-            if(this.isWatered) {
-                return "#c38f75"
-            } else {
-                return "#876363"
-            }
-        } else {
-            return "#4e3636"
+            return DATA.IMAGES.TILLED_SOIL
         }
+
+        return DATA.IMAGES.SOIL
     }
     onClick() {
         if(!!this.game
