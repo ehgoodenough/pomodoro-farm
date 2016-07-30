@@ -23,9 +23,16 @@ export default class Tile {
     }
     onClick() {
         if(!!this.game
-        && !!this.game.player
-        && !!this.game.player.item) {
-            this.game.player.item.applyTo(this)
+        && !!this.game.player) {
+            if(!!this.game.player.item) {
+                this.game.player.item.applyTo(this)
+            } else {
+                if(this.plant.stage == this.plant.maxstage) {
+                    console.log("harvest!!")
+                } else {
+                    console.log("empty hand")
+                }
+            }
         }
     }
     onNewDay() {
