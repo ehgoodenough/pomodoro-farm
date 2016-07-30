@@ -20,7 +20,12 @@ export default {
     },
     IMAGES: {
         SOIL: require("assets/images/soil.png"),
-        TILLED_SOIL: require("assets/images/tilled_soil.png"),
+        TILLED_SOIL: [
+            require("assets/images/tilled_soil_0.png"),
+            require("assets/images/tilled_soil_1.png"),
+            require("assets/images/tilled_soil_2.png"),
+            require("assets/images/tilled_soil_3.png"),
+        ],
         SEED: require("assets/images/seed.png"),
         SPROUT: require("assets/images/sprout.png"),
         PLANT: require("assets/images/plant.gif"),
