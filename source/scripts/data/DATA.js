@@ -11,15 +11,20 @@ export default {
         COLOR: "#222",
     },
     COLORS: {
-        BLACK: "#60635A",
-        PURPLE: "#846380",
         RED: "#C25C4E",
-        YELLOW: "#E9D799",
         GREEN: "#B9B963",
+        YELLOW: "#E9D799",
+        PURPLE: "#846380",
+        BLACK: "#60635A",
         WHITE: "#F6EFDD",
     },
     IMAGES: {
-        SOIL: require("assets/images/soil.png"),
+        SOIL: [
+            require("assets/images/soil.png"),
+        ],
+        WATERED_SOIL: [
+            require("assets/images/watered_soil_0.png"),
+        ],
         TILLED_SOIL: [
             require("assets/images/tilled_soil_0.png"),
             require("assets/images/tilled_soil_1.png"),
