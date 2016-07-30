@@ -1,4 +1,5 @@
 import Tile from "scripts/model/Tile.js"
+import Plant from "scripts/model/Plant.js"
 
 export default {
     HOE: {
@@ -20,4 +21,16 @@ export default {
             }
         }
     },
+    SEED_BAG: {
+        name: "bag of seeds",
+        amount: 3,
+        applyTo: function(tile) {
+            if(tile.isHoed == true
+            && this.amount > 0) {
+                this.amount -= 1
+                tile.plant = new Plant(tile)
+                console.log("planting;", this.amount, "remains")
+            }
+        }
+    }
 }

@@ -23,4 +23,11 @@ export default class Game {
     update(delta) {
         this.player.update(delta)
     }
+    onNewDay() {
+        this.tiles.map((tile) => {
+            if(!!tile.onNewDay) {
+                tile.onNewDay()
+            }
+        })
+    }
 }

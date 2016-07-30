@@ -4,7 +4,11 @@ import {Input} from "scripts/Input.js"
 export default class Player {
     constructor() {
         this.inventorySelection = 0
-        this.inventory = [ITEMS.HOE, ITEMS.WATERING_CAN]
+        this.inventory = [
+            ITEMS.HOE,
+            ITEMS.SEED_BAG,
+            ITEMS.WATERING_CAN,
+        ]
 
         this.inputs = {
             0: new Input("1"),
@@ -26,7 +30,7 @@ export default class Player {
         for(var i = 0; i <= 9; i += 1) {
             if(this.inputs[i].isDown(delta)) {
                 this.inventorySelection = i
-                console.log("set item:", this.item.name)
+                console.log("set item to " + i + ":", this.item && this.item.name)
             }
         }
     }

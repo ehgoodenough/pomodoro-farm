@@ -2,10 +2,14 @@ import React from "react"
 
 import DATA from "scripts/data/DATA.js"
 
+import Plant from "scripts/render/Plant.js"
+
 export default class Tile extends React.Component {
     render() {
         return (
-            <div style={this.style} onClick={this.onClick.bind(this)}/>
+            <div style={this.style} onClick={this.onClick.bind(this)}>
+                {this.plant}
+            </div>
         )
     }
     get style() {
@@ -22,8 +26,13 @@ export default class Tile extends React.Component {
         }
     }
     onClick() {
-        if(this.props.tile.onClick) {
+        if(!!this.props.tile.onClick) {
             this.props.tile.onClick()
+        }
+    }
+    get plant() {
+        if(!!this.props.tile.plant) {
+            return <Plant plant={this.props.tile.plant}/>
         }
     }
 }

@@ -28,4 +28,14 @@ export default class Tile {
             this.game.player.item.applyTo(this)
         }
     }
+    onNewDay() {
+        if(!!this.plant
+        && !!this.plant.onNewDay) {
+            this.plant.onNewDay()
+        }
+
+        if(this.isWatered) {
+            this.isWatered = false
+        }
+    }
 }
