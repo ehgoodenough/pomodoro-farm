@@ -30,4 +30,13 @@ export default class Game {
             }
         })
     }
+    onBuySeeds() {
+        if(this.player.gold >= 1) {
+            this.player.gold -= 1
+            this.player.inventory[1].amount += 1
+            console.log("buying seeds: " + this.player.gold + " gold, " + this.player.inventory[1].amount + " seeds")
+        } else {
+            console.log("not enough money")
+        }
+    }
 }

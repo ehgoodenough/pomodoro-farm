@@ -3,12 +3,14 @@ import {Input} from "scripts/Input.js"
 
 export default class Player {
     constructor() {
-        this.inventorySelection = 0
+        this.inventorySelection = -1
         this.inventory = [
             ITEMS.HOE,
             ITEMS.SEED_BAG,
             ITEMS.WATERING_CAN,
         ]
+
+        this.gold = 1
 
         this.inputs = {
             "0": new Input("1"),

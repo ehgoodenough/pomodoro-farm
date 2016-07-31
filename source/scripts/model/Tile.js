@@ -27,8 +27,11 @@ export default class Tile {
             if(!!this.game.player.item) {
                 this.game.player.item.applyTo(this)
             } else {
-                if(this.plant.stage == this.plant.maxstage) {
-                    console.log("harvest!!")
+                if(!!this.plant
+                && this.plant.stage == this.plant.maxstage) {
+                    delete this.plant
+                    this.game.player.gold += 2
+                    console.log("harvesting, " + this.game.player.gold + " gold")
                 } else {
                     console.log("empty hand")
                 }
