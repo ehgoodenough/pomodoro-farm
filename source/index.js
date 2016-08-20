@@ -5,28 +5,23 @@
 import React from "react"
 import ReactDOM from "react-dom"
 
-import Mount from "scripts/render/Mount.js"
+import Mount from "scripts/Mount.js"
 
 var render = ReactDOM.render(<Mount/>, document.getElementById("mount"))
 
 ////////////
-// Model //
+// State //
 //////////
 
-import Game from "scripts/model/Game.js"
+var state = new Object()
 
-var state = new Object({
-    game: new Game(),
-})
-
-if(STAGE == "DEVELOPMENT") {
-    window.game = state.game
+if(STAGE === "DEVELOPMENT") {
     window.state = state
 }
 
 import Loop from "scripts/Loop.js"
+import Input from "scripts/Input.js"
 
-Loop(function(delta) {
-    state.game.update(delta)
+var loop = Loop(function(delta) {
     render.setState(state)
 })
