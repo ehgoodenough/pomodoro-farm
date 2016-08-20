@@ -1,7 +1,3 @@
-/////////////
-// Render //
-///////////
-
 import React from "react"
 import ReactDOM from "react-dom"
 
@@ -9,19 +5,17 @@ import Mount from "scripts/Mount.js"
 
 var render = ReactDOM.render(<Mount/>, document.getElementById("mount"))
 
-////////////
-// State //
-//////////
-
 var state = new Object()
 
-if(STAGE === "DEVELOPMENT") {
-    window.state = state
+var Loop = function(functionality) {
+    window.setInterval(function() {
+        functionality()
+    }, 1000 / 60)
 }
-
-import Loop from "scripts/Loop.js"
-import Input from "scripts/Input.js"
 
 var loop = Loop(function(delta) {
     render.setState(state)
 })
+
+// start/stop button, timer text
+// cockadoodledoo at end of timer
