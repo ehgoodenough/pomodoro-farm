@@ -5,7 +5,19 @@ import Mount from "scripts/Mount.js"
 
 var render = ReactDOM.render(<Mount/>, document.getElementById("mount"))
 
-var state = new Object()
+class Pomodoro {
+    constructor() {
+        console.log("starting pomodoro")
+    }
+}
+
+class Game {
+    startPomodoro() {
+        this.pomodoro = new Pomodoro()
+    }
+}
+
+window.game = new Game()
 
 var Loop = function(functionality) {
     window.setInterval(function() {
@@ -14,7 +26,9 @@ var Loop = function(functionality) {
 }
 
 var loop = Loop(function(delta) {
-    render.setState(state)
+    render.setState({
+        game: game
+    })
 })
 
 // start/stop button, timer text

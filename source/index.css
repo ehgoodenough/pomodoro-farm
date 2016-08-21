@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    cursor: default;
     user-select: none;
     box-sizing: border-box;
     image-rendering: pixelated;
@@ -13,4 +12,10 @@ html {
     background-color: #EEE;
 
     padding: 2em;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1em;
 }
