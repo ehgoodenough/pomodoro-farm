@@ -9,13 +9,13 @@
 html {
     color: #111;
     font-family: monospace;
-    background-color: #EEE;
+    background-color: #FFF;
 
     padding: 2em;
 }
 
 button {
+    padding: 1em;
     font: inherit;
     cursor: pointer;
-    padding: 1em;
 }

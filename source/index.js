@@ -7,16 +7,18 @@ var render = ReactDOM.render(<Mount/>, document.getElementById("mount"))
 
 class Pomodoro {
     constructor() {
-        console.log("starting pomodoro")
-        this.time = 25 * 1000
+        this.time = 10 * 1000 // 25 * 60 * 1000
     }
     update(delta) {
         this.time -= delta
         if(this.time <= 0) {
-            console.log("done!")
-        } else {
-            console.log(this.time)
+            this.time = 0
         }
+    }
+    toString() {
+        var minutes = Math.floor(this.time / (1000 * 60))
+        var seconds = Math.floor(this.time / 1000) % 60
+        return minutes + ":" + (seconds < 10 ? "0" : "") + seconds
     }
 }
 
@@ -26,7 +28,12 @@ class Game {
     }
     update(delta) {
         if(this.pomodoro != undefined) {
-            this.pomodoro.update(delta)
+            if(this.pomodoro.update instanceof Function) {
+                this.pomodoro.update(delta)
+                if(this.pomodoro.time == 0) {
+                    delete this.pomodoro
+                }
+            }
         }
     }
 }
@@ -50,5 +57,4 @@ var loop = Loop(function(delta) {
     })
 })
 
-// start/stop button, timer text
 // cockadoodledoo at end of timer
