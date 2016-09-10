@@ -5,9 +5,14 @@ import Mount from "scripts/Mount.js"
 
 var render = ReactDOM.render(<Mount/>, document.getElementById("mount"))
 
+var cockadoodledoo = [
+    new Audio(require("sounds/cock-a-doodle-doo-1.mp3")),
+    new Audio(require("sounds/cock-a-doodle-doo-2.mp3"))
+]
+
 class Pomodoro {
     constructor() {
-        this.time = 10 * 1000 // 25 * 60 * 1000
+        this.time = 25 * 60 * 1000
     }
     update(delta) {
         this.time -= delta
@@ -31,6 +36,7 @@ class Game {
             if(this.pomodoro.update instanceof Function) {
                 this.pomodoro.update(delta)
                 if(this.pomodoro.time == 0) {
+                    cockadoodledoo[0].play()
                     delete this.pomodoro
                 }
             }
