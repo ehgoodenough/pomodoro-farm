@@ -13,7 +13,7 @@ var cockadoodledoo = [
 class Pomodoro {
     constructor() {
         this.start = this.now
-        this.length = 10 * 1000
+        this.length = 25 * 60 * 1000
 
         this.hasRung = false
     }
@@ -36,7 +36,7 @@ class Pomodoro {
         if(this.time >= 0) {
             return "#FFF"
         } else {
-            if(this.time < -5 * 1000) {
+            if(this.time < -5 * 60 * 1000) {
                 return "#C00"
             } else {
                 return "#0C0"
