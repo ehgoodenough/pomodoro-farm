@@ -12,10 +12,25 @@ var cockadoodledoo = [
 
 class Pomodoro {
     constructor() {
-        this.time = 10 * 1000
+        this.start = this.now
+        this.length = 10 * 1000
+
+        this.hasRung = false
+    }
+    get now() {
+        return window.performance.now()
+    }
+    get time() {
+        return this.length - (this.now - this.start)
     }
     update(delta) {
-        this.time -= delta
+        if(this.time <= 0) {
+            if(!this.hasRung) {
+                this.hasRung = true
+                cockadoodledoo[0].volume = 0.1
+                cockadoodledoo[0].play()
+            }
+        }
     }
     get color() {
         if(this.time >= 0) {
@@ -46,11 +61,6 @@ class Game {
         if(this.pomodoro != undefined) {
             if(this.pomodoro.update instanceof Function) {
                 this.pomodoro.update(delta)
-                if(this.pomodoro.time == 0) {
-                    cockadoodledoo[0].volume = 0.1
-                    cockadoodledoo[0].play()
-                    delete this.pomodoro
-                }
             }
         }
     }
