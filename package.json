@@ -1,6 +1,7 @@
 {
   "name": "pomodoro-farm",
   "version": "0.1.0",
+  "main": "main.js",
   "description": "Grow a farm with patience and discipline.",
   "author": "Andrew McPherson <@ehgoodenough>",
   "license": "MIT",

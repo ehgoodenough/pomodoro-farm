@@ -1,6 +1,4 @@
-REPOSITORY_URL=$(node -p -e "require('./package.json').repository.url")
-
-git clone $REPOSITORY_URL --branch gh-pages shares
+git clone http://github.com/ehgoodenough/pomodoro-farm --branch gh-pages shares
 
 node build --production
 
@@ -15,5 +13,5 @@ rm -rf shares
 
 echo
 echo Share your build by going to:
-echo $REPOSITORY_URL/$1
+echo http://ehgoodenough.github.io/pomodoro-farm/$1
 echo
