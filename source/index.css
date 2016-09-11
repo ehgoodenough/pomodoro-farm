@@ -15,7 +15,19 @@ html {
 }
 
 button {
-    padding: 1em;
+    padding: 0.5em;
     font: inherit;
     cursor: pointer;
+}
+
+section:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+#timer {
+    padding: 0.5em;
+    line-height: 1em;
+    vertical-align: top;
+    border: 1px solid #111;
+    display: inline-block;
 }

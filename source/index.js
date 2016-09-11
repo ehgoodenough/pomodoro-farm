@@ -12,18 +12,29 @@ var cockadoodledoo = [
 
 class Pomodoro {
     constructor() {
-        this.time = 25 * 60 * 1000
+        this.time = 10 * 1000
     }
     update(delta) {
         this.time -= delta
-        if(this.time <= 0) {
-            this.time = 0
+    }
+    get color() {
+        if(this.time >= 0) {
+            return "#FFF"
+        } else {
+            if(this.time < -5 * 1000) {
+                return "#C00"
+            } else {
+                return "#0C0"
+            }
         }
     }
-    toString() {
+    get string() {
+        return (this.time / 1000).toFixed(3)
         var minutes = Math.floor(this.time / (1000 * 60))
         var seconds = Math.floor(this.time / 1000) % 60
         return minutes + ":" + (seconds < 10 ? "0" : "") + seconds
+        // TODO: Include the milliseconds when rendering the timer.
+        // TODO: Return how long it's been since the timer rang.
     }
 }
 
@@ -36,6 +47,7 @@ class Game {
             if(this.pomodoro.update instanceof Function) {
                 this.pomodoro.update(delta)
                 if(this.pomodoro.time == 0) {
+                    cockadoodledoo[0].volume = 0.1
                     cockadoodledoo[0].play()
                     delete this.pomodoro
                 }
