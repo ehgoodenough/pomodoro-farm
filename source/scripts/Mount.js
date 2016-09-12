@@ -7,19 +7,19 @@ export default class Mount extends React.Component {
                 return (
                     <div>
                         <section>
-                            000<br/>
-                            000<br/>
-                            000<br/>
-                        </section>
-                        <section>
+                            <button onClick={this.startPomodoro.bind(this)}>
+                                <span>Start Pomodoro</span>
+                            </button>
                             {!!this.state.game.pomodoro ? (
                                 <div id="timer" style={{backgroundColor: this.state.game.pomodoro.color}}>
                                     {this.state.game.pomodoro.string}
                                 </div>
                             ) : null}
-                            <button onClick={this.startPomodoro.bind(this)}>
-                                <span>Start Pomodoro</span>
-                            </button>
+                        </section>
+                        <section>
+                            000<br/>
+                            000<br/>
+                            000<br/>
                         </section>
                     </div>
                 )

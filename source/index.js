@@ -10,15 +10,21 @@ var cockadoodledoo = [
     new Audio(require("sounds/cock-a-doodle-doo-2.mp3"))
 ]
 
-class Pomodoro {
-    constructor() {
-        this.start = this.now
-        this.length = 25 * 60 * 1000
+var SECONDS = 1000
+var MINUTES = 60 * SECONDS
+var HOURS = 60 * MINUTES
 
-        this.hasRung = false
+class Pomodoro {
+    constructor(start) {
+        this.start = start || this.now
+        this.length = length || 25 * MINUTES
+
+        this.hasRung = this.time <= 0
+
+        window.localStorage.start = this.start
     }
     get now() {
-        return window.performance.now()
+        return Date.now()
     }
     get time() {
         return this.length - (this.now - this.start)
@@ -44,16 +50,24 @@ class Pomodoro {
         }
     }
     get string() {
-        return (this.time / 1000).toFixed(3)
-        var minutes = Math.floor(this.time / (1000 * 60))
-        var seconds = Math.floor(this.time / 1000) % 60
-        return minutes + ":" + (seconds < 10 ? "0" : "") + seconds
-        // TODO: Include the milliseconds when rendering the timer.
-        // TODO: Return how long it's been since the timer rang.
+        var sign = this.time < 0 ? "-" : ""
+
+        var minutes = Math.floor(Math.abs(this.time) / MINUTES)
+
+        var seconds = Math.floor((Math.abs(this.time) % MINUTES) / SECONDS)
+        seconds = (seconds < 10 ? "0" : "") + seconds
+
+        var milliseconds = Math.floor(((Math.abs(this.time) % MINUTES) % SECONDS))
+        milliseconds = (milliseconds < 100 ? "0" : "") + (milliseconds < 10 ? "0" : "") + milliseconds
+
+        return sign + minutes + ":" + seconds + ":" + milliseconds
     }
 }
 
 class Game {
+    constructor() {
+        this.pomodoro = new Pomodoro(window.localStorage.start)
+    }
     startPomodoro() {
         this.pomodoro = new Pomodoro()
     }
