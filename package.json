@@ -1,0 +1,30 @@
+{
+  "name": "!!!",
+  "version": "1.0.0",
+  "description": "A game of farming",
+  "private": true,
+  "contributors": [
+    "Andrew McPherson <@ehgoodenough>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ehgoodenough"
+  },
+  "scripts": {
+    "build": "codeglue --stage=PRODUCTION",
+    "start": "codeglue --stage=DEVELOPMENT --mode=SERVER",
+    "publish": "codeglue --stage=PRODUCTION --mode=PUBLISH"
+  },
+  "dependencies": {
+    "keyb": "^1.1.0",
+    "left-pad": "^1.2.0",
+    "preact": "^8.2.7",
+    "statgrab": "^1.2.0",
+    "yaafloop": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "codeglue": "^1.4.1"
+  }
+}
