@@ -15,11 +15,13 @@
             margin-left: 1em;
         }
 
-        &::before {
-            content: "[ ";
-        }
-        &::after {
-            content: " ]";
+        &.Item {
+            &::before {
+                content: "[ ";
+            }
+            &::after {
+                content: " ]";
+            }
         }
 
         &:hover {
