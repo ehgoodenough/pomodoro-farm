@@ -25,6 +25,8 @@ export default class Game {
             new Patch({"game": this}),
             new Patch({"game": this}),
         ]
+
+        this.gold = undefined
     }
     update(delta) {
         if(Keyb.isDown("<escape>")) {
@@ -34,6 +36,20 @@ export default class Game {
         this.patches.forEach((patch) => {
             patch.update(delta)
         })
+    }
+    sell() {
+        if(this.items[2] !== undefined
+        && this.items[2].amount > 0) {
+            this.items[2].amount -= 1
+            this.gold = this.gold || 0
+            this.gold += 30
+        }
+    }
+    buy() {
+        if(this.gold >= 15) {
+            this.gold -= 15
+            this.items[0].amount += 1
+        }
     }
 }
 
@@ -73,7 +89,7 @@ class Patch {
                 this.isHarvestable = true
                 this.isSeeded = false
                 this.isWatered = false
-                console.log("Plant is ready to harvest")
+                console.log("Crop is ready to harvest")
             }
         }
     }
@@ -90,10 +106,10 @@ class Patch {
                 let random = Math.random()
 
                 if(random < 0.25) {
-                    alert("You harvested 1 crop, and got 1 extra seed!")
+                    console.log("You harvested 1 crop, and got 1 extra seed!")
                     this.game.items[0].amount += 1
                 } else {
-                    alert("You harvested 1 crop!")
+                    console.log("You harvested 1 crop!")
                 }
 
                 if(this.game.items[2] == undefined) {

@@ -23,6 +23,11 @@ export default function InventoryMenu(props) {
                     <label>{"<cancel>"}</label>
                 </span>
             )}
+            {props.game.gold !== undefined && (
+                <span className="GoldCount">
+                    {props.game.gold} gold
+                </span>
+            )}
         </menu>
     )
 }
