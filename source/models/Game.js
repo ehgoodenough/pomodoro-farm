@@ -99,29 +99,24 @@ class Patch {
             || (this.game.selectedItem === undefined && this.isHarvestable)
     }
     onInteract() {
-        if(this.game.selectedItem === undefined) {
-            if(this.isHarvestable == true) {
-                this.isHarvestable = false
+        if(this.isHarvestable == true) {
+            this.game.selectedItem = undefined
+            this.isHarvestable = false
 
-                let random = Math.random()
-
-                if(random < 0.25) {
-                    console.log("You harvested 1 crop, and got 1 extra seed!")
-                    this.game.items[0].amount += 1
-                } else {
-                    console.log("You harvested 1 crop!")
-                }
-
-                if(this.game.items[2] == undefined) {
-                    this.game.items.push(new Item({
-                        "game": this.game,
-                        "definition": "crop",
-                        "amount": 1,
-                    }))
-                } else {
-                    this.game.items[2].amount += 1
-                }
+            console.log("Harvested 1 crop!")
+            
+            if(this.game.items[2] == undefined) {
+                this.game.items.push(new Item({
+                    "game": this.game,
+                    "definition": "crop",
+                    "amount": 1,
+                }))
+            } else {
+                this.game.items[2].amount += 1
             }
+        }
+
+        if(this.game.selectedItem === undefined) {
             return
         }
 

@@ -1,6 +1,6 @@
 import Preact from "preact"
 import Yaafloop from "yaafloop"
-import Statgrab from "statgrab"
+import Statgrab from "statgrab/do"
 
 import View from "views/View.js"
 import Game from "models/Game.js"
