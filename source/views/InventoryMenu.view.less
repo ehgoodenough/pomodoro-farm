@@ -1,0 +1,33 @@
+.InventoryMenu {
+    padding: 0.33em 1em;
+
+    color: #EEE;
+    font-size: 0.75em;
+    font-family: "comfortaa";
+    background-color: #222;
+
+    .InventoryLabel {
+        color: #AAA;
+    }
+
+    .InventoryOption {
+        &:not(:first-child) {
+            margin-left: 1em;
+        }
+
+        &::before {
+            content: "[ ";
+        }
+        &::after {
+            content: " ]";
+        }
+
+        &:hover {
+            label {
+                cursor: pointer;
+                text-decoration: underline;
+                // text-decoration-style: dotted;
+            }
+        }
+    }
+}

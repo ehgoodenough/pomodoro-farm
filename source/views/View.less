@@ -25,6 +25,7 @@ body {
 @media(min-aspect-ratio: 16/9) {
     #frame {
         font-size: 11.111vh;
+        font-size: 5.555vh;
         width: 177.778vh;
         height: 100vh;
     }
@@ -40,42 +41,31 @@ body {
 }
 
 #frame {
-    background-color: #222;
-}
-
-.stack {
-    margin-left: 50%;
-    margin-top: 20%;
-    position: absolute;
-}
-
-.camera {
-    width: 300px;
-    height: 300px;
-
-    transition-duration: 2s;
-    transition-property: transform;
-
-    perspective: 500000px;
-    transform-origin: 0% 0% 0;
-    transform-style: preserve-3d;
-}
-
-.slab {
-    position: absolute;
-    transform-style: preserve-3d;
-}
-
-.slab > .face {
-    position: absolute;
-
-    // border-width: 2px;
-    // border-style: dashed;
-    // border-color: #111;
-    // box-sizing: border-box;
+    background-color: #444;
 }
 
 @font-face {
     font-family: "comfortaa";
-    src: url("fonts/comfortaa.ttf") format("truetype");
+    src: url("../fonts/comfortaa.ttf") format("truetype");
+}
+
+.Farm {
+    bottom: 0em;
+    padding: 1em;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    justify-content: space-between;
+    // justify-content: center;
+
+    .FarmPatch {
+        width: 4em;
+        height: 4em;
+        background-color: #222;
+
+        &:not(:last-child) {
+            margin-right: 1em;
+        }
+    }
 }
