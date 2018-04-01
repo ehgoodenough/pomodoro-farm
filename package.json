@@ -1,14 +1,14 @@
 {
-  "name": "!!!",
-  "version": "1.0.0",
-  "description": "A game of farming",
+  "name": "pomodoro-farm",
+  "version": "1.0.0-alpha",
+  "description": "Grow a farm with patience and discipline",
   "private": true,
   "contributors": [
     "Andrew McPherson <@ehgoodenough>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ehgoodenough"
+    "url": "https://github.com/ehgoodenough/pomodoro-farm"
   },
   "scripts": {
     "build": "codeglue --stage=PRODUCTION",

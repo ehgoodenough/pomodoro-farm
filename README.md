@@ -1,8 +1,8 @@
-# ... #
+# Pomodoro Farm #
 
 ### Getting Started ###
 
-Have node 4+ and npm 3+.
+Have node 8+ and npm 5+.
 
 ```
 node --version
