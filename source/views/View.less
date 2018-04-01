@@ -49,51 +49,6 @@ body {
     src: url("../fonts/comfortaa.ttf") format("truetype");
 }
 
-.Farm {
-    bottom: 0em;
-    padding: 1em;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    text-align: center;
-    justify-content: space-between;
-    background-color: #888;
-
-    .FarmPatch {
-        width: 4em;
-        height: 2em;
-        background-color: #222;
-
-        &.canInteract:hover {
-            cursor: pointer;
-            background-color: #333;
-        }
-
-        &:not(:last-child) {
-            margin-right: 1em;
-        }
-
-        label {
-            display: block;
-            font-size: 0.75em;
-            line-height: 1.3em;
-            font-family: comfortaa;
-            color: #EEE;
-
-            &.isHarvestable {
-                transform: rotate(-90deg);
-                font-size: 1.5em;
-                padding-left: 1em;
-            }
-
-            &.isEmpty {
-                color: #AAA;
-                font-size: 0.75em;
-            }
-        }
-    }
-}
-
 #game {
     top: 0em;
     left: 0em;
@@ -101,31 +56,4 @@ body {
     bottom: 0em;
     position: absolute;
     overflow-x: scroll;
-}
-
-.Shop {
-    top: 0em;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin-left: 100%;
-
-    font-family: comfortaa;
-    color: white;
-    padding: 5em;
-
-    h2 {
-        margin-bottom: 0.5em;
-        color: #AAA;
-    }
-
-    li {
-        margin-bottom: 0.25em;
-
-        &:hover {
-            cursor: pointer;
-            color: red;
-            text-decoration: underline;
-        }
-    }
 }
