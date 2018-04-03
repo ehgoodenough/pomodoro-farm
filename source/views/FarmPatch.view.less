@@ -1,0 +1,36 @@
+.FarmPatch {
+    width: 1em;
+    height: 1em;
+    position: absolute;
+
+    overflow: hidden;
+    background-color: #222;
+
+    &.canInteract:hover {
+        cursor: pointer;
+        background-color: #333;
+    }
+
+    &:not(:last-child) {
+        margin-right: 1em;
+    }
+
+    label {
+        display: block;
+        font-size: 0.75em;
+        line-height: 1.3em;
+        font-family: comfortaa;
+        color: #EEE;
+
+        &.isHarvestable {
+            transform: rotate(-90deg);
+            font-size: 1.5em;
+            padding-left: 1em;
+        }
+
+        &.isEmpty {
+            color: #AAA;
+            font-size: 0.75em;
+        }
+    }
+}

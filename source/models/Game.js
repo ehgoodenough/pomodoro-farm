@@ -24,12 +24,14 @@ export default class Game {
         }
 
         this.patches = [
-            new Patch({"game": this}),
-            new Patch({"game": this}),
-            new Patch({"game": this}),
-            new Patch({"game": this}),
-            new Patch({"game": this}),
+            new Patch({"game": this, "position": {"x": 5, "y": 5}}),
+            new Patch({"game": this, "position": {"x": 6, "y": 6}}),
+            new Patch({"game": this, "position": {"x": 7, "y": 7}}),
         ]
+
+        // this.layers = [
+        //     new Layer()
+        // ]
 
         this.gold = undefined
     }
@@ -82,6 +84,7 @@ class Item {
 class Patch {
     constructor(patch) {
         this.game = patch.game
+        this.position = patch.position
     }
     update(delta) {
         if(this.isSeeded
