@@ -9,13 +9,17 @@ export default function InventoryMenu(props) {
             <label className="InventoryLabel">
                 {Strings["INVENTORY_LABEL"] + ":"}
             </label>
-            {props.game.items.map((item) => (
-                <span className="Item InventoryOption"
-                    onClick={() => item.onSelect()}
-                    style={{"color": item.isSelected ? "red" : "white"}}>
-                    <label>{item.label}</label>
-                </span>
-            ))}
+            {Object.values(props.game.items).map((item) => {
+                if(item.amount !== null) {
+                    return (
+                        <span className="Item InventoryOption"
+                            onClick={() => item.onSelect()}
+                            style={{"color": item.isSelected ? "red" : "white"}}>
+                            <label>{item.label}</label>
+                        </span>
+                    )
+                }
+            })}
             {props.game.selectedItem !== undefined && (
                 <span className="InventoryOption"
                     onClick={() => props.game.selectedItem = undefined}

@@ -6,17 +6,22 @@ export default class Game {
 
         this.selectedItem = undefined
 
-        this.items = [
-            new Item({
-                "game": this,
+        this.items = {
+            "seeds": new Item({
                 "definition": "seeds",
+                "game": this,
                 "amount": 3,
             }),
-            new Item({
-                "game": this,
-                "definition": "watering can"
+            "watering can": new Item({
+                "definition": "watering can",
+                "game": this
             }),
-        ]
+            "crop": new Item({
+                "definition": "crop",
+                "game": this,
+                "amount": null,
+            })
+        }
 
         this.patches = [
             new Patch({"game": this}),
@@ -38,9 +43,8 @@ export default class Game {
         })
     }
     sell() {
-        if(this.items[2] !== undefined
-        && this.items[2].amount > 0) {
-            this.items[2].amount -= 1
+        if(this.items["crop"].amount > 0) {
+            this.items["crop"].amount -= 1
             this.gold = this.gold || 0
             this.gold += 30
         }
@@ -48,7 +52,7 @@ export default class Game {
     buy() {
         if(this.gold >= 15) {
             this.gold -= 15
-            this.items[0].amount += 1
+            this.items["seeds"].amount += 1
         }
     }
 }
@@ -104,16 +108,9 @@ class Patch {
             this.isHarvestable = false
 
             console.log("Harvested 1 crop!")
-            
-            if(this.game.items[2] == undefined) {
-                this.game.items.push(new Item({
-                    "game": this.game,
-                    "definition": "crop",
-                    "amount": 1,
-                }))
-            } else {
-                this.game.items[2].amount += 1
-            }
+
+            this.game.items["crop"].amount = this.game.items["crop"].amount || 0
+            this.game.items["crop"].amount += 1
         }
 
         if(this.game.selectedItem === undefined) {
