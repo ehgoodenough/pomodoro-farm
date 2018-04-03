@@ -2,6 +2,7 @@ import Keyb from "keyb"
 
 import Item from "models/Item.js"
 import Patch from "models/Patch.js"
+import Layer from "models/Layer.js"
 
 export default class Game {
     constructor(game) {
@@ -32,9 +33,16 @@ export default class Game {
             new Patch({"game": this, "position": {"x": 7, "y": 7}}),
         ]
 
-        // this.layers = [
-        //     new Layer()
-        // ]
+        this.layers = [
+            new Layer({
+                "points": [
+                    {"x": 0, "y": 8},
+                    {"x": 32-4, "y": 8},
+                    {"x": 32, "y": 16},
+                    {"x": 0+4, "y": 16},
+                ]
+            }),
+        ]
 
         this.gold = undefined
     }
