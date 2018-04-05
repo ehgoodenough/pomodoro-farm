@@ -1,0 +1,50 @@
+.InventoryMenu {
+    width: 100%;
+    padding: 0.615em 1em;
+    position: absolute;
+    left: 0em;
+    right: 0em;
+    top: 0em;
+    z-index: 9999;
+
+    color: #EEE;
+    font-size: 0.375em;
+    font-family: "comfortaa";
+    background-color: #222;
+
+    .InventoryLabel {
+        color: #AAA;
+    }
+
+    .InventoryOption {
+        &:not(:first-child) {
+            margin-left: 1em;
+        }
+
+        &.Item {
+            &::before {
+                content: "[ ";
+            }
+            &::after {
+                content: " ]";
+            }
+        }
+
+        &:hover {
+            label {
+                cursor: pointer;
+                text-decoration: underline;
+                // text-decoration-style: dotted;
+            }
+        }
+    }
+
+    .GoldCount {
+        color: gold;
+        float: right;
+    }
+}
+
+.InventoryMenu-block {
+    height: 1.8em;
+}
