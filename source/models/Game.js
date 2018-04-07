@@ -72,8 +72,12 @@ export default class Game {
         ]
 
         this.gold = undefined
+
+        this.time = 0
     }
     update(delta) {
+        this.time += delta.s
+
         if(Keyb.isDown("<escape>")) {
             this.selectedItem = undefined
         }
