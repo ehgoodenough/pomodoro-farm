@@ -2,6 +2,7 @@ import Preact from "preact"
 
 import "views/View.less"
 
+import Frame from "views/Frame.view.js"
 import InventoryMenu from "views/InventoryMenu.view.js"
 import FarmPatch from "views/FarmPatch.view.js"
 import Layer from "views/Layer.view.js"
@@ -10,12 +11,9 @@ import Sky from "views/Sky.view.js"
 export default class View {
     render() {
         return (
-            <div id="frame">
+            <Frame>
                 <Sky time={this.props.game.time}/>
-                {this.props.game.layers.map((layer) => (
-                    <Layer layer={layer}/>
-                ))}
-            </div>
+            </Frame>
         )
         // <div id="block"/>
         // <InventoryMenu game={props.game}/>
@@ -25,11 +23,5 @@ export default class View {
         // {props.game.patches.map((patch) => (
         //     <FarmPatch patch={patch}/>
         // ))}
-    }
-    get style() {
-        return {
-            background: BACKGROUNDS[Math.floor(this.props.game.time)],
-            background: BACKGROUNDS[8]
-        }
     }
 }

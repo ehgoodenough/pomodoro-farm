@@ -11,7 +11,7 @@ export default class Sky extends Preact.Component {
         )
     }
     get children() {
-        let HOUR = (this.props.time / 10) % 24
+        let HOUR = (this.props.time) % 24
 
         let children = []
         for(var hour = 0; hour < 24; hour += 1) {
