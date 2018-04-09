@@ -3,6 +3,7 @@ import Keyb from "keyb"
 import Item from "models/Item.js"
 import Patch from "models/Patch.js"
 import Layer from "models/Layer.js"
+import Clock from "models/Clock.js"
 
 export default class Game {
     constructor(game) {
@@ -72,11 +73,11 @@ export default class Game {
         ]
 
         this.gold = undefined
-
-        this.time = 0
+        
+        this.clock = new Clock()
     }
     update(delta) {
-        this.time += delta.s
+        this.clock.update(delta)
 
         if(Keyb.isDown("<escape>")) {
             this.selectedItem = undefined
