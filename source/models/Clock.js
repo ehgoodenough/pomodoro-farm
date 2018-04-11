@@ -1,9 +1,10 @@
 export default class Clock {
     constructor() {
-        this.time = 0
+        this.maxtime = 5 * 60
+        this.time = this.maxtime
     }
     update(delta) {
-        this.time += delta.s
+        this.time -= delta.s
     }
     play() {
         // ...
@@ -26,3 +27,6 @@ export default class Clock {
         return minutes + ":" + (seconds < 10 ? "0" : "") + seconds
     }
 }
+
+// 0:00 -> 12:00 (25 minutes)
+// 12:00 -> 24:00 (5/10 minutes)

@@ -14,15 +14,15 @@ export default class View {
     render() {
         return (
             <Frame>
-                <Sky time={this.props.game.clock.time}/>
+                <Sky clock={this.props.game.clock}/>
                 <Clock clock={this.props.game.clock}/>
+                {this.props.game.layers.map((layer) => (
+                    <Layer layer={layer}/>
+                ))}
             </Frame>
         )
         // <div id="block"/>
         // <InventoryMenu game={props.game}/>
-        // {props.game.layers.map((layer) => (
-        //     <Layer layer={layer}/>
-        // ))}
         // {props.game.patches.map((patch) => (
         //     <FarmPatch patch={patch}/>
         // ))}
