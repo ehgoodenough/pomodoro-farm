@@ -85,17 +85,20 @@ export default class Game {
 
         this.gold = undefined
 
-        this.clock = new Clock()
+        this.clock = new Clock({"game": this})
     }
     update(delta) {
-        this.clock.update(delta)
-
         if(Keyb.isDown("<escape>")) {
             this.selectedItem = undefined
         }
 
         this.patches.forEach((patch) => {
             patch.update(delta)
+        })
+    }
+    doThings() {
+        this.patches.forEach((patch) => {
+            patch.doThings()
         })
     }
     sell() {
@@ -112,3 +115,7 @@ export default class Game {
         }
     }
 }
+
+// TODO: Make the patches/seeds/plants a bit more graphical
+// TODO: Freeze all interaction with the patches while the clock is running.
+// TODO: Return the shopping interface to the game.

@@ -1,10 +1,25 @@
 export default class Clock {
-    constructor() {
-        this.maxtime = 5 * 60
-        this.time = this.maxtime
+    constructor(clock) {
+        this.game = clock.game
+
+        this.maxtime = 1 * 60
+        this.time = 0
     }
     update(delta) {
         this.time -= delta.s
+
+        if(this.time <= 0
+        && this.hasStarted == true
+        && this.hasEnded != true) {
+            this.hasEnded = true
+
+            this.game.doThings()
+        }
+    }
+    reset() {
+        this.hasStarted = true
+        this.hasEnded = false
+        this.time = this.maxtime
     }
     play() {
         // ...
@@ -22,8 +37,8 @@ export default class Clock {
         // both positive and negative
     }
     get timestring() {
-        let minutes = Math.floor(this.time / 60)
-        let seconds = Math.floor(this.time % 60)
+        let minutes = Math.max(0, Math.floor(this.time / 60))
+        let seconds = Math.max(0, Math.floor(this.time % 60))
         return minutes + ":" + (seconds < 10 ? "0" : "") + seconds
     }
 }

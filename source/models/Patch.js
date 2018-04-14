@@ -4,17 +4,26 @@ export default class Patch {
         this.position = patch.position
     }
     update(delta) {
+        // if(this.isSeeded
+        // && this.isWatered
+        // && this.time > 0) {
+        //     this.time -= delta.ms
+        //     if(this.time <= 0) {
+        //         this.time = 0
+        //         this.isHarvestable = true
+        //         this.isSeeded = false
+        //         this.isWatered = false
+        //         console.log("Crop is ready to harvest")
+        //     }
+        // }
+    }
+    doThings() {
         if(this.isSeeded
-        && this.isWatered
-        && this.time > 0) {
-            this.time -= delta.ms
-            if(this.time <= 0) {
-                this.time = 0
-                this.isHarvestable = true
-                this.isSeeded = false
-                this.isWatered = false
-                console.log("Crop is ready to harvest")
-            }
+        && this.isWatered) {
+            this.isHarvestable = true
+            this.isSeeded = false
+            this.isWatered = false
+            console.log("Crop is ready to harvest")
         }
     }
     get canInteract() {

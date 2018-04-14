@@ -19,12 +19,12 @@ export default class View {
                 {this.props.game.layers.map((layer) => (
                     <Layer layer={layer}/>
                 ))}
+                <InventoryMenu game={this.props.game}/>
+                {this.props.game.patches.map((patch) => (
+                    <FarmPatch patch={patch}/>
+                ))}
             </Frame>
         )
         // <div id="block"/>
-        // <InventoryMenu game={props.game}/>
-        // {props.game.patches.map((patch) => (
-        //     <FarmPatch patch={patch}/>
-        // ))}
     }
 }
