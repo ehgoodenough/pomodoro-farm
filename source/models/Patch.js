@@ -32,6 +32,11 @@ export default class Patch {
             || (this.game.selectedItem === undefined && this.isHarvestable)
     }
     onInteract() {
+        if(this.game.clock.hasStarted
+        && !this.game.clock.hasEnded) {
+            console.log("!")
+            return
+        }
         if(this.isHarvestable == true) {
             this.game.selectedItem = undefined
             this.isHarvestable = false

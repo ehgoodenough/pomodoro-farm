@@ -34,17 +34,18 @@ export default class Game {
             new Patch({"game": this, "position": {"x": 7, "y": 7}}),
         ]
 
-        this.layers = [
-            new Layer({
-                "color": "#8BB271",
-                "points": [
-                    {"x": 0, "y": 15},
-                    {"x": 32, "y": 15},
-                    {"x": 32, "y": 30},
-                    {"x": 0, "y": 30},
-                ]
-            }),
-        ]
+        this.layers = []
+        // this.layers = [
+        //     new Layer({
+        //         "color": "#8BB271",
+        //         "points": [
+        //             {"x": 0, "y": 15},
+        //             {"x": 32, "y": 15},
+        //             {"x": 32, "y": 30},
+        //             {"x": 0, "y": 30},
+        //         ]
+        //     }),
+        // ]
         // this.layers = [
         //     new Layer({
         //         "color": "#333",
